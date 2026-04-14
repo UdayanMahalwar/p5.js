@@ -303,6 +303,9 @@ p5.prototype.saveGif = async function(
   if (typeof duration !== 'number') {
     throw TypeError('Duration parameter must be a number');
   }
+  else if(duration <=0) {
+    throw TypeError('Duration parameter should be >= 0');
+  }
 
   // extract variables for more comfortable use
   const delay = (options && options.delay) || 0;  // in seconds
